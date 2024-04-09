@@ -16,7 +16,7 @@ public class PagoConRetraso extends Pago {
         Scanner scanner = new Scanner(System.in);
         int folio;
         double monto;
-        int fecha;
+        String fecha;
         String otroPago;
         System.out.print("Ingrese el folio del cliente: ");
         try {
@@ -32,7 +32,7 @@ public class PagoConRetraso extends Pago {
                 System.out.print("Ingrese el folio del cliente: ");
                 folio = scanner.nextInt();
                 System.out.println("Ingrese la fecha del pago (DD/MM/AAAA):");
-                fecha = scanner.nextInt();
+                fecha = scanner.next();
                 do {
                     System.out.print("Ingrese el monto del pago: ");
                     monto = scanner.nextDouble();
