@@ -74,28 +74,29 @@ public class Cliente {
     public void setnumDomicilio(int numDomicilio) {
         this.numDomicilio = numDomicilio;
     }
-    public void agregarCliente(Scanner scanner, ArrayList<Cliente> clientes) throws InputMismatchException {
+   public void agregarCliente(Scanner scanner, ArrayList<Cliente> clientes) throws InputMismatchException {
         System.out.print("Ingrese el primer nombre del cliente: ");
         String primerNombre = scanner.next();
         System.out.print("Ingrese el segundo nombre del cliente (si no tiene, escriba N): ");
         String segundoNombre = scanner.next();  
-        System.out.print(" Ingrese el apellido paterno del cliente: ");
+        System.out.print("Ingrese el apellido paterno del cliente: ");
         String apellidoPaterno = scanner.next();
         System.out.print("Ingrese el apellido materno del cliente: ");
         String apellidoMaterno = scanner.next();
-    
         int edad = 0;
         while (edad == 0) {
-            try {
+         do {
+            try { 
                 System.out.print("Ingrese su edad: ");
                 edad = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("La edad debe ser un numero entero. Intente de nuevo.");
                 scanner.next(); 
             }
+        System.out.println("No se aceptan menores de edad");
+         }  while (edad<18);
         }
         scanner.nextLine(); 
-    
         System.out.print("Ingrese su domicilio: ");
         String direccion = scanner.nextLine();
         int numDomicilio = 0;
