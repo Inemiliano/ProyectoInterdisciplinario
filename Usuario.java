@@ -9,7 +9,7 @@ public class Usuario {
         Scanner scanner = new Scanner(System.in);
         boolean credencialesCorrectas = false;
         do {
-            System.out.println("Ingrese su Usuario:");
+            System.out.println("Ingrese su usuario:");
             nombre = scanner.nextLine();
             System.out.println("Ingrese su contraseña:");
             contraseña = scanner.nextLine();
