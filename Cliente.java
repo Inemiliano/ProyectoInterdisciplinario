@@ -85,17 +85,18 @@ public class Cliente {
         String apellidoMaterno = scanner.next();
         int edad = 0;
         while (edad == 0) {
-         do {
-            try { 
-                System.out.print("Ingrese su edad: ");
-                edad = scanner.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("La edad debe ser un numero entero. Intente de nuevo.");
-                scanner.next(); 
-            }
-        System.out.println("No se aceptan menores de edad");
-         }  while (edad<18);
-        }
+            do {
+               try { 
+                   System.out.print("Ingrese su edad: ");
+                   edad = scanner.nextInt();
+               } catch (InputMismatchException e) {
+                   System.out.println("La edad debe ser un numero entero. Intente de nuevo.");
+                   scanner.next(); 
+               }
+               System.out.println("No se aceptan menores de edad");
+            }  while (edad<18);
+           
+           }
         scanner.nextLine(); 
         System.out.print("Ingrese su domicilio: ");
         String direccion = scanner.nextLine();
@@ -105,7 +106,7 @@ public class Cliente {
                 System.out.print("Ingrese el número de su domicilio: ");
                 numDomicilio = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("El número del domicilio debe ser un numero entero. Intentelo de nuevo");
+                System.out.println("El número del domicilio debe ser un numero entero. Intentelo de nuevo.");
                 scanner.next(); 
             }
         }
@@ -138,8 +139,9 @@ public class Cliente {
                 System.out.println("No se encontró ningún cliente con ese folio");
             }
         } catch (InputMismatchException e) {
-            System.out.println("Error: Ingrese un valor numérico válido para el folio del cliente.");
+            System.out.println("Error: Ingrese un valor numérico válido para el folio del cliente");
             scanner.next(); 
         }
     }
 }
+
