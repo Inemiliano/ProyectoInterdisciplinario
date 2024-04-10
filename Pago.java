@@ -37,5 +37,4 @@ public abstract class Pago {
     } 
     public abstract void registrarPago(ArrayList<Pago> pagos);
     public abstract void imprimirInformePagos(ArrayList<Pago> pagos);
-
 }
