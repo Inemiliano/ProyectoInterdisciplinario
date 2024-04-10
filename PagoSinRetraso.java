@@ -12,10 +12,11 @@ public class PagoSinRetraso extends Pago {
     }
 
     @Override
-    public void registrarPago(ArrayList<Pago> pagos) {
+   public void registrarPago(ArrayList<Pago> pagos) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el folio del cliente: ");
         int folio;
+        String fecha;
         try {
             folio = scanner.nextInt();
         } catch (InputMismatchException e) {
@@ -27,6 +28,8 @@ public class PagoSinRetraso extends Pago {
         String otroPago;
         do {
             try {
+                System.out.println("Ingrese la fecha del pago (DD/MM/AAAA):");
+                fecha = scanner.next();
                 System.out.print("Ingrese el monto del pago: ");
                 monto = scanner.nextDouble();
     
@@ -48,6 +51,15 @@ public class PagoSinRetraso extends Pago {
             }
         } while (otroPago.equals("Si"));
     }
+    @Override
+    public void imprimirInformePagos(ArrayList<Pago> pagos, ArrayList<Pago> pagosR) {
+        System.out.println("Informe de pagos:");
+        for (int i = 0; i < pagos.size(); i++) {
+            Pago pago = pagos.get(i);
+            System.out.println("Folio del cliente: " + pago.getFolioCliente() + ", Monto: " + pago.getMonto());
+        }
+    }
+}
     @Override
     public void imprimirInformePagos(ArrayList<Pago> pagos) {
         System.out.println("Informe de pagos:");
