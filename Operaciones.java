@@ -25,7 +25,7 @@ public class Operaciones {
                             System.out.println("La cantidad minima es de 7,000");
                             System.out.println("Ingrese el monto del prestamo: ");
                             monto = scanner.nextInt();
-                        } while (monto < 7000 || monto <20000);
+                        } while (monto < 7000);
                         total = monto * 10 / 100;
                         montoDePago = monto / 4 + total;
                         System.out.println("El monto de interes mensual es de: " + total);
@@ -38,7 +38,7 @@ public class Operaciones {
                             System.out.println("Ingrese el monto del prestamo");
                             monto = scanner.nextInt();
                             
-                        } while (monto < 12000 || monto <20000);
+                        } while (monto < 12000);
                         total = monto * 10 / 100;
                         montoDePago = monto / 8 + total;
                         System.out.println("El monto de interes es de: " + total);
@@ -81,3 +81,4 @@ public void generarInformePrestamo() {
     System.out.println("Monto total a pagar mensualmente: " + montoDePago);
 }
 }
+
