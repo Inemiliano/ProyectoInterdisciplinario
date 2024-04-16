@@ -7,12 +7,10 @@ public class Operaciones {
   private int montoDePago;
   private int opcion;
   private int folio;
-
   public void calcularMontoPago() { 
         Scanner scanner = new Scanner(System.in);
         String r;
-        System.out.println("La taza de interes para todos los plazos de pago es del 10% por mes");
-        System.out.println("Mientras mayor sea el plazo puede ser mayor el monto de prestamo");
+        System.out.println("La taza de interes para todos los prestamos es del 3% por pago mensual");
         do {
             try {
                 System.out.println("Ingrese el folio del cliente: ");
@@ -26,7 +24,7 @@ public class Operaciones {
                             System.out.println("Ingrese el monto del prestamo: ");
                             monto = scanner.nextInt();
                         } while (monto < 7000);
-                        total = monto * 10 / 100;
+                        total = monto * 3 / 100;
                         montoDePago = monto / 4 + total;
                         System.out.println("El monto de interes mensual es de: " + total);
                         System.out.println("El monto de pago es de " + montoDePago);
@@ -39,7 +37,7 @@ public class Operaciones {
                             monto = scanner.nextInt();
                             
                         } while (monto < 12000);
-                        total = monto * 10 / 100;
+                        total = monto * 3 / 100;
                         montoDePago = monto / 8 + total;
                         System.out.println("El monto de interes es de: " + total);
                         System.out.println("El monto de pago es de: " + montoDePago);
@@ -54,7 +52,7 @@ public class Operaciones {
                                 System.out.println("El monto debe estar entre 15,000 y 20,000 pesos");
                             }
                         } while (monto < 15000 || monto > 20000);
-                        total = monto * 10 / 100;
+                        total = monto * 3 / 100;
                         montoDePago = monto / 10 + total;
                         System.out.println("El monto de interes es de: " + total);
                         System.out.println("El monto de pago es de: " + montoDePago);
@@ -76,9 +74,7 @@ public class Operaciones {
     }
 public void generarInformePrestamo() {
     System.out.println("=== Informe de prestamo ===");
-    System.out.println("El folio asignado al cliente es el: " + folio);
     System.out.println("Monto del préstamo: " + monto);
     System.out.println("Monto total a pagar mensualmente: " + montoDePago);
 }
 }
-
