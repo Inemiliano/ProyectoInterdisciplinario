@@ -62,7 +62,6 @@ public class Main {
                         System.out.println("Saliendo del programa...");
                         scanner.close();
                         return;
-
                     default:
                         System.out.println("Opción invalida. Seleccione una opción valida");
                 }
