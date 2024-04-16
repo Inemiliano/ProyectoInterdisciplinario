@@ -20,7 +20,7 @@ public class PagoConRetraso extends Pago {
         String otroPago;
         do {
             try {
-                System.out.println("Se cobrara el doble por retraso ");
+                System.out.println("Se cobrara un recargo del 5% con respecto al monto de pago original ");
                 System.out.print("Ingrese el folio del cliente: ");
                 folio = scanner.nextInt();
                 System.out.println("Ingrese la fecha del pago (DD/MM/AAAA):");
@@ -31,9 +31,9 @@ public class PagoConRetraso extends Pago {
                     if (monto <= 0) {
                         System.out.println("No se aceptan cantidades negativas o iguales a 0, ingrese una cantidad superior a 0");
                     } else {
-                        PagoConRetraso pago = new PagoConRetraso(folio, monto * 2);
+                        PagoConRetraso pago = new PagoConRetraso(folio, monto + monto * .5);
                         pagos.add(pago);
-                        System.out.println("Pago registrado correctamente con recargo del doble del monto original");
+                        System.out.println("Pago registrado correctamente con recargo del 5% con respecto al monto original");
                         System.out.println("Ultimo pago registrado:");
                         System.out.println("Folio: " + pago.getFolioCliente() + ", Monto: " + pago.getMonto());
                     }
