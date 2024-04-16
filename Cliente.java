@@ -92,10 +92,10 @@ public class Cliente {
                } catch (InputMismatchException e) {
                    System.out.println("La edad debe ser un numero entero. Intente de nuevo.");
                    scanner.next(); 
+                   System.out.println("No se aceptan menores de edad");
                }
-               System.out.println("No se aceptan menores de edad");
+              
             }  while (edad<18);
-           
            }
         scanner.nextLine(); 
         System.out.print("Ingrese su domicilio: ");
@@ -144,4 +144,5 @@ public class Cliente {
         }
     }
 }
+
 
