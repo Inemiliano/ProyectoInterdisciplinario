@@ -14,23 +14,18 @@ public class PagoSinRetraso extends Pago {
     @Override
     public void registrarPago(ArrayList<Pago> pagos) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el folio del cliente: ");
-        int folio;
-        try {
-            folio = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Error: Ingrese un valor numérico válido para el folio");
-            scanner.next();
-            return;
-        }
         double monto;
         String otroPago;
+        String fecha;
+        int folio;
         do {
             try {
-                
+                System.out.print("Ingrese el folio del cliente: ");
+                folio = scanner.nextInt();
+                System.out.println("Ingrese la fecha del pago (DD/MM/AAAA):");
+                fecha = scanner.next();
                 System.out.print("Ingrese el monto del pago: ");
                 monto = scanner.nextDouble();
-    
                 do {
                     if (monto <= 0) {
                         System.out.println("No se aceptan cantidades negativas o iguales a 0, ingrese una cantidad superior a 0");
@@ -43,7 +38,7 @@ public class PagoSinRetraso extends Pago {
                 System.out.print("Digite Si para regresar el menú principal");
                 otroPago = scanner.next();
             } catch (InputMismatchException e) {
-                System.out.println("Error: Ingrese un valor numérico válido para el monto del pago");
+                System.out.println("Error: Ingrese un valor numérico válido ");
                 scanner.next(); 
                 otroPago = "Si";
             }
